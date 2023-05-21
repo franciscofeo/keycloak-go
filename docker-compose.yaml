@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:21.1.1
+    command: start-dev
+    networks:
+      - keycloak-net
+    ports:
+      - "8180:8080"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+
